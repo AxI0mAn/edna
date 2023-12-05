@@ -1,0 +1,20 @@
+
+{% block _folower1 %}
+  <div class="folower swiper-slide">
+    <div class="folower_person">
+      <div class="folower_foto">
+        {% set img1 ={ 
+        name: 'folower_Na_M',
+        folder: './../assets/images/home/'
+        }
+        %}
+        {{ makePicture.pack(img1) }}
+      </div>
+      <div class="folower_who">
+        <h4 class="folower_name"><strong>Nadiya Maltseva</strong></h3>
+        <h5 class="folower_jobs">Maltseva Consulting</h5>
+      </div>
+    </div>
+    <p class="folower_text color_beige_dark">During a stage in my life, I needed to transition from my corporate attire during work hours and floral dresses during leisure time...</p>
+  </div>
+{% endblock %}

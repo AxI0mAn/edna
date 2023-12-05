@@ -1,0 +1,77 @@
+{% set title = 'Guided Shoping' %}
+{% set pageName = 'guid_shop' %}
+{% include "_head.njk" %} 
+{%- import "_macros_image.njk" as makePicture -%}
+
+    <div class="wrapper_{{pageName}}">
+      <header class="container"> 
+        {% include "_nav.njk" %}
+        <div class="burger_nav">
+          <div class="nav_control">         
+            <a href="./index.html" class="nav_btn btn_close">
+              <span class="burger_nav_line">-</span>
+              <span class="burger_nav_line">-</span>
+            </a>             
+          </div> 
+        </div>
+      </header>
+      <main class="main_{{pageName}} mod_main">
+        <section class="{{pageName}} container">
+          <div class="{{pageName}}_content mod_content">
+            <div class="{{pageName}}_img mod_img mod_video">
+              {% set video1 ={ 
+                nameV: 'video_gui_shop',
+                nameP: 'guided_shopping',
+                folder: './../assets/images/guided_shopping/'
+                }
+              %}
+
+              {%- import "_macros_video.njk" as makeVideo -%}
+                {{ makeVideo.pack(video1) }}
+            {% include "./svg_inline/play_btn.svg" %}
+            </div>
+            <div class="{{pageName}}_message mod_mes">
+              <div class="{{pageName}}_about mod_about">
+                <div class="{{pageName}}_text mod_text">
+                  <p class="timing text_accent">5h &#124; in person</p>
+                  <h4><strong>To deal with overwhelming feelings of shopping alone</strong></h4>
+                  <div class="mod_description">
+                    <p>It&#8217;s easy to get lost among numerous brands, uncertain of what will be an investment rather than a disappointment. Following my signature approach you&#8217;ll get exactly what&#8217;s needed without stress of missing out.</p>                    
+                    <p>You can enjoy some «me time», while I take care of everything. Prior to a session I study your aesthetic, pre-select the capsule, and plan a shopping route to meet your goals &#38; budget.</p>
+                    <p>Then I take you on a tailor-made shopping tour with my full support &#38; guidance. For, in the end, you feel like its been a well-deserved self-care experience.</p>
+                    <p>Tap for details and booking.</p>
+                  </div>
+                </div> 
+              </div>
+              <a href="./index.html/#link_to_book" title="link to BOOK section" class="book_now"><span>BOOK NOW</span></a> 
+              <details class="det_details text_accent">
+                <summary>details</summary>
+                <div class="mod_serv">
+                  <div>
+                    <p>5 hour of in person session</p>
+                    <p>Pre-selected wardrobe capsule</p>
+                    <p>Mindful and coordinated purchases</p>
+                    <p>Effectively invested budget</p>
+                  </div>
+                  <ul "mod_ul">
+                    <li class="mod_li">You fill out a questionary, share your shopping goals &#38; budget</li>
+                    <li class="mod_li">I build a shopping strategy, pre-select and book the clothing for the shopping day</li>
+                    <li class="mod_li">We meet in person and follow the pre-planned shopping route</li>
+                    <li class="mod_li">While shopping I teach you self styling techniques personalized for your body lines and appearance</li>
+                    <li class="mod_li">We finish with new purchases, all coordinated in a wardrobe capsule according to your aesthetic, personality and lifestyle.</li>
+                  </ul>
+                  <p>For in person guided shopping experience in Milan, London or Paris, please leave at though a Contact section.</p>
+                </div>
+              </details>
+              <details class="det_testimonials text_accent">
+                <summary class="testimonials">testimonials</summary>
+                {% include "_testimonials.njk" %}
+              </details>
+              <p class="timing text_accent">5h &#124; in person</p>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+  <body>
+</html>

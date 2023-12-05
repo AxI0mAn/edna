@@ -1,0 +1,409 @@
+@import './../base/vars.scss';
+
+//===================================max-width: 768px
+@media screen and (max-width: 768px) {}
+
+//===================================max-width: 450px
+@media screen and (max-width: 450px) {}
+
+//============= F U N C T I O N s =================//
+
+//функция для пересчета из РХ в REM
+// func_rem(15);
+@function func_rem($px) {
+  @return calc(($px / $rem)*1rem);
+}
+
+//функция для расчета % этого элемета ($this_px), относительно родительского ($parent_px)
+// func_perc(1920, 300)
+@function func_perc($parent_px, $this_px) {
+  @return calc(($this_px / $parent_px) * 100%);
+}
+
+//функция для получения отзывчивого свойства
+// func_respons(1920, 300)
+@function func_respons($maxSizeValue, $minSizeValue) {
+  $deltaSize: $maxSizeValue - $minSizeValue;
+  @return calc(#{$minSizeValue + px} + #{$deltaSize} * ((100vw - #{$minWidth + px}) / (#{$maxWidth} - #{$minWidth})));
+}
+
+// функция для пропорционального изменения размера в зависимости от ширины экрана макета
+@function func_prop_maket($maket_value) {
+  @return calc($maket_value*(100vw/$maxWidth));
+}
+
+@function func_prop_mob($maket_value) {
+  @return calc($maket_value*(100vw/$tabWidth));
+}
+
+//============= M I X I N s =================//
+
+// Адаптация текста между макетным и минимальным значениями
+// @include font_adapt(18, 10);
+@mixin font_adapt($bigSize, $smallSize) {
+  $deltaMaxSize: $bigSize - $smallSize;
+  $deltaMinSize: 1.7 * $deltaMaxSize;
+
+  @media (max-width: 1023px) {
+    font-size: calc(($smallSize * 1px) + $deltaMinSize * ((100vw - ($minWidth * 1px)) / $maxWidth));
+  }
+
+  @media (min-width: 1024px) {
+    font-size: calc(($smallSize * 1px) + ($deltaMaxSize * (100vw / #{$maxWidth})));
+  }
+}
+
+// Адаптация через ограничение размера с помощью вилки (clamp) для любого элемента от минимум (1rem) до максимум (85px) с учетом предпочтительного размера (3rem)
+// font-size: clamp(1rem, 3rem, 85px);
+// width: clamp(100px, 500px, 100rem);
+//
+
+//===============================================
+//переходы между состояниями
+//@include transit;
+@mixin transit($duration: 0.3s) {
+  transition: all $duration ease 0s;
+  -webkit-transition: all $duration ease 0s;
+  -moz-transition: all $duration ease 0s;
+  -ms-transition: all $duration ease 0s;
+  -o-transition: all $duration ease 0s;
+}
+
+//===================
+// position: absolute;
+// //@include posa();
+@mixin posa($top: auto, $right: auto, $bottom: auto, $left: auto, $width, $height) {
+  position: absolute;
+  top: $top;
+  right: $right;
+  bottom: $bottom;
+  left: $left;
+  @include box($width, $height: $width);
+}
+
+//===============================================
+//отцентрировать блок по осям х/у
+//@include сentering-xy();
+@mixin сentering-xy() {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+}
+
+//@include сentering-x();
+@mixin сentering-x() {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  -webkit-transform: translateX(-50%);
+  -moz-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  -o-transform: translateX(-50%);
+}
+
+//@include сentering-y();
+@mixin сentering-y() {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  -o-transform: translateY(-50%);
+}
+
+//=========================
+//@include bordeR($radius);
+@mixin bordeR($radius) {
+  border-radius: $radius;
+  -webkit-border-radius: $radius;
+  -moz-border-radius: $radius;
+  -ms-border-radius: $radius;
+  -o-border-radius: $radius;
+}
+
+//===========================
+//flex
+//@include fx ($direction, $wrap: nowrap, $jc: space-between, $ac: center, $grow: 0, $shrink: 0, $basis: auto);
+@mixin fx ($direction, $wrap: nowrap, $jc: space-between, $ac: center, $grow: 0, $shrink: 0, $basis: auto) {
+  display: flex;
+  flex-flow: $direction $wrap;
+  justify-content: $jc;
+  align-content: $ac;
+  flex: $grow $shrink $basis;
+}
+
+//@include fx-column();
+@mixin fx-column ($wrap: nowrap) {
+  display: flex;
+  flex-flow: column $wrap;
+}
+
+@mixin fx-row($wrap: nowrap) {
+  display: flex;
+  flex-flow: row $wrap;
+}
+
+@mixin fx-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin fx-center-column {
+  @include flex-center;
+  flex-direction: column;
+}
+
+@mixin fx-center-vert {
+  display: flex;
+  align-items: center;
+}
+
+@mixin fx-center-horiz {
+  display: flex;
+  justify-content: center;
+}
+
+//=========================
+// grid
+//  @include grid_each-centr($col, $row);  ИСПОЛЬЗОВАН
+@mixin grid_each-centr($col, $row) {
+  display: grid;
+  grid-template-columns: repeat($col, 1fr);
+  grid-template-rows: repeat($row, 1fr);
+  justify-items: center;
+  align-items: center;
+}
+
+
+// Если хочешь только rows   
+//  @include grid(repeat(2, 1fr));
+
+// Если хотите rows и columns     
+// @include grid(repeat(2, 1fr), repeat(3, 1fr));
+
+// Если хотите columns, но не row то же самое gap, row-gap или column-gap 
+//  @include grid($columns: repeat(3, 1fr));
+
+@mixin grid($rows: null, $columns: null, $gap: null, $row-gap: null, $column-gap: null) {
+  display: grid;
+  gap: $gap;
+  row-gap: $row-gap;
+  column-gap: $column-gap;
+  grid-template-rows: $rows;
+  grid-template-columns: $columns;
+}
+
+//======================
+//grid
+// сетка в стиле галереи с неизвестным количеством элементов, если они имеют одинаковую высоту.
+// для сетки из элементов разной высоты - нужно добавлять clear:both к каждому элементу с новой строки
+
+@mixin part_of($num, $gutter_percent: $gutter_percent) {
+  margin-right: $gutter_percent;
+  float: right;
+  width: (100 - $gutter_percent * ($num - 1)) / $num;
+
+  &:nth-of-type(#{$num}n+1) {
+    margin-right: 0;
+  }
+
+  &:nth-of-type(n+#{($num+1)}) {
+    margin-top: $gutter_percent;
+  }
+}
+
+//==========================
+// шрифт
+@mixin font($color: $T_color, $max_size, $min_size, $line-height-max, $line-height-min: 1, $f-weight: normal, $text-trans: none, $leter-spac: normal) {
+  color: $color;
+  font-size: func_respons($max_size, $min_size);
+  line-height: func_respons($line-height-max, $line-height-min);
+  font-weight: $f-weight;
+  text-transform: $text-trans;
+  letter-spacing: $leter-spac;
+}
+
+//==========================
+// определения ширины и высоты за один раз.
+//@include box($width, $height: $width);
+@mixin box($width, $height: $width) {
+  width: $width;
+  height: $height;
+}
+
+//=================================================
+// свойства для псевдоэлементов: 
+//@include pseudo-block('content');
+@mixin pseudo-block($content: '', $display: block, $pos: absolute) {
+  content: $content;
+  display: $display;
+  position: $pos;
+}
+
+//@include pseudo-inline('content');
+@mixin pseudo-inline($width: 100%,
+  $height: 100%,
+  $display: inline-block,
+  $pos: absolute,
+  $content: ""
+
+) {
+  content: $content;
+  display: $display;
+  position: $pos;
+  @include box($width, $height);
+}
+
+//==================================================
+// Стилизация плейсхолдера для элементов ввода 
+//@include placeholder($color, $size, $weight);
+@mixin placeholder($color, $size, $weight) {
+  &::-webkit-input-placeholder {
+    color: $color;
+    font-size: $size;
+    font-weight: $weight;
+  }
+
+  &:-moz-placeholder {
+    color: $color;
+    font-size: $size;
+    font-weight: $weight;
+  }
+
+  &::-moz-placeholder {
+    color: $color;
+    font-size: $size;
+    font-weight: $weight;
+  }
+
+  &:-ms-input-placeholder {
+    color: $color;
+    font-size: $size;
+    font-weight: $weight;
+  }
+}
+
+//=====================================
+// CSS-треугольники
+//@include triangle($width, up/right/down/left, $color);
+@mixin triangle($width, $direction, $color) {
+  width: 0;
+  height: 0;
+
+  @if $direction==up {
+    border-left: $width solid transparent;
+    border-right: $width solid transparent;
+    border-bottom: $width solid $color;
+  }
+
+  @if $direction==down {
+    border-left: $width solid transparent;
+    border-right: $width solid transparent;
+    border-top: $width solid $color;
+  }
+
+  @if $direction==left {
+    border-top: $width solid transparent;
+    border-bottom: $width solid transparent;
+    border-right: $width solid $color;
+  }
+
+  @if $direction==right {
+    border-top: $width solid transparent;
+    border-bottom: $width solid transparent;
+    border-left: $width solid $color;
+  }
+}
+
+//====================
+// Видимость - миксин для скрытия или отображения элемента, полезный для анимации появления/затухания.
+// @include fade(hide/show)
+@mixin fade($type) {
+  @if $type=="hide" {
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 1s, opacity 1s;
+  }
+
+  @else if $type=="show" {
+    visibility: visible;
+    opacity: 1;
+    transition: visibility 1s, opacity 1s;
+  }
+}
+
+//===============================================
+// кнопки
+// @extend %button
+%button {
+  width: func_respons(188, 120);
+  height: func_respons(76, 48.5);
+  background-color: black;
+  box-shadow: 0px 15px 25px yellow;
+  cursor: pointer;
+  display: block;
+  position: relative;
+  border-radius: func_respons(20, 10);
+  -webkit-border-radius: func_respons(20, 10);
+  -moz-border-radius: func_respons(20, 10);
+  -ms-border-radius: func_respons(20, 10);
+  -o-border-radius: func_respons(20, 10);
+
+  strong {
+    width: fit-content;
+    font-size: func_rem(20);
+    font-family: 'Catamaran_Bold';
+    font-weight: 700;
+    color: $white;
+    letter-spacing: func_rem(0.6);
+    text-transform: capitalize;
+    @include сentering-xy();
+  }
+
+  &:hover {
+    box-shadow: 0px 10px 5px rgb(149, 1, 224);
+    text-shadow:
+      1px 3px 0 rgb(70, 70, 70),
+      1px 5px 5px rgb(149, 1, 224);
+  }
+
+  &:active {
+    box-shadow: 0px -5px 5px rgb(149, 1, 224);
+    text-shadow: -3px -2px 3px rgba(70, 70, 70, 0.338);
+    letter-spacing: 0.07rem;
+  }
+}
+
+//===============================================
+// псевдоклассы для ссылок
+// @extend %links
+%links {
+  font-family: 'CorGarSemiBold', serif;
+  font-size: font_adapt(18, 12);
+  text-transform: capitalize;
+
+  &:link {
+    color: red;
+  }
+
+  &:visited {
+    color: green;
+  }
+
+  &:hover {
+    color: yellow;
+  }
+
+  &:active {
+    color: black;
+  }
+
+  @include transit;
+}

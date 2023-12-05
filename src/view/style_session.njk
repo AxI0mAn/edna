@@ -1,0 +1,83 @@
+{% set title = 'Style Session' %}
+{% set pageName = 'styl_sess' %}
+{% include "_head.njk" %} 
+{%- import "_macros_image.njk" as makePicture -%}
+
+    <div class="wrapper_{{pageName}}">
+      <header class="container"> 
+        {% include "_nav.njk" %}
+        <div class="burger_nav">
+          <div class="nav_control">         
+            <a href="./index.html" class="nav_btn btn_close">
+              <span class="burger_nav_line">-</span>
+              <span class="burger_nav_line">-</span>
+            </a>             
+          </div> 
+        </div>
+      </header>
+      <main class="main_{{pageName}} mod_main">
+        <section class="{{pageName}} container">
+          <div class="{{pageName}}_content mod_content">
+            <div class="{{pageName}}_img mod_img mod_video">
+              {% set video1 ={ 
+                nameV: 'loading',
+                nameP: 'style_session',
+                folder: './../assets/images/style_session/'
+                }
+              %}
+
+              {%- import "_macros_video.njk" as makeVideo -%}
+                {{ makeVideo.pack(video1) }}
+
+            {% include "./svg_inline/play_btn.svg" %}
+            </div>
+            <div class="{{pageName}}_message mod_mes">
+              <div class="{{pageName}}_about mod_about">
+                <div class="{{pageName}}_text mod_text">
+                  <p class="timing text_accent">4h &#124; in person</p>
+                  <h4><strong>To elevate style confidence &#38; give you a strategy</strong></h4>
+                  <div class="mod_description">
+                    <p>If you&#8217;re wondering where to start or have questions challenging you, this is the best way to address them, e.g.</p>
+                    <ul>
+                      <li class="mod_li">how to adapt my wardrobe to a new lifestyle?</li>
+                      <li class="mod_li">how to avoid same scenarios when shopping?</li>
+                      <li class="mod_li">how to upgrade my looks to endear clients?</li>
+                      <li class="mod_li">how to follow fashion but stay true to myself?</li>
+                    </ul>
+                    <p>Through a visual guide I&#8217;ll explain how to dress for your body type and navigate current styles. I&#8217;ll give you a ready to shop personalized wardrobe capsule and recommend brands for you to have a clear wardrobe strategy and feel relieved and confident on your style journey.</p>
+                    <p>Tap for details and booking.</p>
+                  </div>
+                </div>
+              </div>
+              <a href="./index.html/#link_to_book" title="link to BOOK section" class="book_now"><span>BOOK NOW</span></a> 
+              
+              <details class="det_details text_accent">
+                <summary>details</summary>
+                <div  class="mod_serv">
+                  <div >
+                    <p>2 sessions</p>
+                    <p>1 style &#38; personality research</p>
+                    <p>1 mood board </p>
+                    <p>1 Visual Style Guide - clear style &#38; wardrobe strategy</p>
+                  </div>
+                  <ul  class="mod_ul">
+                    <li class="mod_li">You fill out a questionary and pass a style research</li>
+                    <li class="mod_li">I define your aesthetics and put together a personal mood board</li>
+                    <li class="mod_li">Session One - we meet online to discuss and confirm the mood board &#124; 35 min.</li>
+                    <li class="mod_li">I create a personalized Visual Style Guide with practical examples, tips and a wardrobe capsule sample based on the mood board, your personality &#38; lifestyle.</li>
+                    <li class="mod_li">Session Two - we meet for coaching though the Visual Style Guide and your further strategy for solo shopping &#38; wardrobe management &#124; 90 min</li>
+                  </ul> 
+                </div>               
+              </details>
+              <details class="det_testimonials text_accent">
+                <summary class="testimonials">testimonials</summary>
+                {% include "_testimonials.njk" %}
+              </details>
+              <p class="timing text_accent">5h &#124; in person</p>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+  <body>
+</html>

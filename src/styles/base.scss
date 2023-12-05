@@ -1,0 +1,380 @@
+@import './base/nulling.scss';
+@import './base/fonts.scss';
+@import './base/vars.scss';
+@import './base/mixins.scss';
+
+body {
+  height: 100%;
+  background-color: $bgc;
+  font-size: 12px;
+  color: $brown;
+
+  .start_hidden {
+    opacity: 0.1;
+    transform: translateY(50%);
+    -webkit-transform: translateY(50%);
+    -moz-transform: translateY(50%);
+    -ms-transform: translateY(50%);
+    -o-transform: translateY(50%);
+  }
+
+  .scroll_visible {
+    opacity: 1;
+    transition: all 1s;
+    transform: translateY(0%);
+  }
+
+  //(color, maxSize, minSize, max-LineH, min-LineH, fWeight, textTrans, letterSpac)
+  h1,
+  h2 {
+    font-family: 'CormorantGaramond-Light', serif;
+    @include font($brown, 64, 22, 62, 14, 300, uppercase);
+  }
+
+  h3 {
+    font-family: 'HelveticaNeue Regular', serif;
+    @include font($red_dark, 12, 10, 12, 10, 400, uppercase, func_rem(0.54));
+    line-height: normal;
+  }
+
+  h4 {
+    strong {
+      font-family: 'HelveticaNeueLTStd-Md', serif;
+      @include font($brown_dark, 12, 10, 12, 10, 500, uppercase);
+      line-height: normal;
+    }
+  }
+
+  h5 {
+    font-family: 'HelveticaNeue Regular', serif;
+    @include font($beige_dark, 7, 5, 7, 5, 400, uppercase, func_rem(0.14));
+    line-height: normal;
+  }
+
+  p,
+  li.mod_li {
+    font-family: 'HelveticaNeue Regular', serif;
+    @include font($brown_dark, 12, 8, 12, 8, 400);
+    line-height: func_rem(18);
+  }
+
+  // strong {
+  //   font-family: 'HelveticaNeueLTStd-Md', serif;
+  //   @include font($brown_dark, 12, 10, 12, 10, 500, uppercase);
+  // }
+}
+
+//?????????????????????????????
+
+.text_accent {
+  font-family: 'HelveticaNeue Regular', serif;
+  @include font($beige_dark, 12, 8, 12, 8, 400, uppercase, func_rem(0.24));
+}
+
+
+a,
+a>span {
+  font-family: 'HelveticaNeue Regular', serif;
+  @include font($beige_dark, 12, 8, 12, 8, 400, uppercase, func_rem(0.24));
+
+  &:visited {
+    color: $brown_light;
+  }
+
+  &:hover {
+    color: $red_dark;
+    text-decoration: underline;
+    text-decoration-style: solid;
+    text-underline-position: under;
+    text-underline-offset: 2.5px;
+    -moz-text-decoration-style: solid;
+  }
+
+  &:active {
+    color: $white;
+    letter-spacing: 0.25rem;
+    text-shadow: -5px -5px 15px $white;
+  }
+
+  @include transit;
+}
+
+
+a.book_now,
+button {
+  background-color: $red_dark;
+  color: $beige_light;
+  max-width: 197px;
+  max-height: 48px;
+  width: func_prop_maket(197);
+  height: func_prop_maket(48);
+  position: relative;
+  text-align: center;
+  @include transit(1s);
+
+  span {
+    width: func_prop_maket(195);
+    color: $beige_light;
+    font-size: func_respons(10, 7);
+    @include сentering-xy();
+    font-family: 'HelveticaNeue Regular', serif;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    text-decoration: none;
+  }
+}
+
+button.enough_btn {
+  background-color: $bgc;
+  border: 1px solid $brown;
+  cursor: pointer;
+  @include transit;
+
+  span {
+    color: $brown_dark;
+  }
+}
+
+.book_now:hover,
+button:hover,
+button.enough_btn:hover {
+  background-color: $beige_dark;
+  border: 1px solid $bgc;
+  @include bordeR(3rem);
+  @include transit(0.5s);
+
+  span {
+    color: $beige_light;
+  }
+}
+
+
+.book_now:active,
+button.enough_btn:active {
+  background-color: $beige_light;
+  border: 1px solid $bgc;
+  @include bordeR(3rem);
+  @include transit(0.5s);
+  width: func_prop_maket(180);
+  height: func_prop_maket(40);
+
+  span {
+    color: $red_dark;
+  }
+}
+
+
+
+
+
+.color_beige_light {
+  color: $beige_light;
+}
+
+.color_beige_dark {
+  color: $beige_dark;
+}
+
+.color_red_dark {
+  color: $red_dark;
+}
+
+.color_brown_dark {
+  color: $brown_dark;
+}
+
+.wrapper {
+  max-width: calc($maxWidth * 1px);
+  width: func_respons(1440, 320);
+  min-width: calc($minWidth * 1px);
+  min-height: 100%;
+
+  display: flex;
+  flex-flow: column nowrap;
+
+  margin: 0 auto;
+}
+
+.container {
+  width: func_perc(1440, 1280);
+  overflow: hidden;
+  max-width: calc($maxWidthContainer * 1px);
+  margin: 0 auto;
+
+}
+
+main {
+  flex: 1 1 auto;
+}
+
+// ===================================min-width: 767px
+@media screen and (max-width: 767px) {
+  body {
+    font-size: 12px;
+
+    //(color, maxSize, minSize, max-LineH, min-LineH, fWeight, textTrans, letterSpac)
+    h1,
+    h2 {
+      font-family: 'CormorantGaramond-Light', serif;
+      @include font($brown, 64, 22, 62, 18, 300, uppercase);
+    }
+
+    h3 {
+      font-family: 'HelveticaNeue Regular', serif;
+      @include font($red_dark, 12, 10, 12, 10, 400, uppercase, func_rem(0.54));
+      line-height: normal;
+    }
+
+    h4 {
+      strong {
+        font-family: 'HelveticaNeueLTStd-Md', serif;
+        @include font($brown_dark, 12, 10, 12, 10, 500, uppercase);
+        line-height: normal;
+      }
+    }
+
+    h5 {
+      font-family: 'HelveticaNeue Regular', serif;
+      @include font($beige_dark, 10, 5, 10, 5, 400, uppercase, func_rem(0.14));
+      line-height: normal;
+    }
+
+    p,
+    li.mod_li {
+      font-family: 'HelveticaNeue Regular', serif;
+      @include font($brown_dark, 12, 8, 12, 8, 400);
+      line-height: func_rem(18);
+    }
+  }
+
+
+  .text_accent {
+    font-family: 'HelveticaNeue Regular', serif;
+    @include font($beige_dark, 12, 8, 12, 8, 400, uppercase, func_rem(0.24));
+  }
+
+  button {
+    background-color: $red_dark;
+    color: $beige_light;
+    max-width: 197px;
+    max-height: 48px;
+    width: func_prop_mob(197); //
+    height: func_prop_mob(48); //
+    position: relative;
+
+    @include transit(1s);
+
+    span {
+      width: func_prop_maket(195);
+      color: $beige_light;
+      font-size: func_respons(10, 7);
+      @include сentering-xy();
+      font-family: 'HelveticaNeue Regular', serif;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+    }
+  }
+
+  button.enough_btn {
+    background-color: $bgc;
+    border: 1px solid $brown;
+    cursor: pointer;
+    @include transit;
+
+    span {
+      color: $brown_dark;
+    }
+  }
+
+  button:hover,
+  button.enough_btn:hover {
+    background-color: $beige_dark;
+    border: 1px solid $bgc;
+    @include bordeR(3rem);
+    @include transit(0.5s);
+
+    span {
+      color: $beige_light;
+    }
+  }
+
+
+  button:active,
+  button.enough_btn:active {
+    background-color: $beige_light;
+    border: 1px solid $bgc;
+    @include bordeR(3rem);
+    @include transit(0.5s);
+    width: func_prop_maket(180);
+    height: func_prop_maket(40);
+
+    span {
+      color: $red_dark;
+    }
+  }
+
+  a,
+  a>span {
+    font-family: 'HelveticaNeue Regular', serif;
+    @include font($beige_dark, 12, 8, 12, 8, 400, uppercase, func_rem(0.24));
+
+    &:visited {
+      color: $brown_light;
+    }
+
+    &:hover {
+      color: $red_dark;
+      text-decoration: underline;
+      text-decoration-style: solid;
+      text-underline-position: under;
+      text-underline-offset: 2.5px;
+      -moz-text-decoration-style: solid;
+    }
+
+    &:active {
+      color: $white;
+      letter-spacing: 0.25rem;
+      text-shadow: -5px -5px 15px $white;
+    }
+
+    @include transit;
+  }
+
+  .color_beige_light {
+    color: $beige_light;
+  }
+
+  .color_beige_dark {
+    color: $beige_dark;
+  }
+
+  .color_red_dark {
+    color: $red_dark;
+  }
+
+  .color_brown_dark {
+    color: $brown_dark;
+  }
+
+  .wrapper {
+    max-width: calc($maxWidth * 1px);
+    width: func_respons(1440, 320);
+    min-width: calc($minWidth * 1px);
+    min-height: 100%;
+
+    display: flex;
+    flex-flow: column nowrap;
+
+    margin: 0 auto;
+  }
+
+
+}
+
+// ===================================min-width: 2300px
+@media screen and (min-width: 2300px) {
+  // .container {
+  //   width: calc($maxWidthContainer * 1px);
+  //   margin: 0 auto;
+  // }
+}

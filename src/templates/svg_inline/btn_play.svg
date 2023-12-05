@@ -1,0 +1,16 @@
+<svg
+  width="150"
+  height="150"
+  viewBox="0 0 150 150"
+  fill="none"
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <circle class="btn_play_circle_75" cx="75" cy="75" r="75" />
+  <circle class="btn_play_circle_74-5" cx="75" cy="75" r="74.5" />
+  <circle class="btn_play_circle_57" cx="75" cy="75" r="57" />
+  <circle class="btn_play_circle_45" cx="75" cy="75" r="45" />
+  <path
+    id="btn_play_triangle"
+    d="M87.5 72.8357C89.5 73.9904 89.5 76.8771 87.5 78.0318L71.5 87.2694C69.5 88.4241 67 86.9808 67 84.6714L67 66.1962C67 63.8868 69.5 62.4434 71.5 63.5981L87.5 72.8357Z"
+  />
+</svg>

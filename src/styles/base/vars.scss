@@ -1,0 +1,22 @@
+$minWidth: 320; // ширинa экрана мобильника
+$tabWidth: 767;
+$maxWidth: 1440; // ширина полотна макета
+$maxWidthContainer: 1280; // ширина ограничивающего контейнера именно тут - совпадает с $maxWidth
+
+
+//размер шрифта для <html> по умолчанию
+$rem: 16; //px
+
+// oсновные цвета макета
+$bgc: #F6F5F1;
+
+$white: #fff;
+$black: #000;
+$red_dark: rgb(179, 23, 25);
+
+$brown_light: #40382D;
+$brown: #2D1B0D;
+$brown_dark: #210803;
+
+$beige_light: #F6F5F1;
+$beige_dark: #8F7D65;

@@ -1,0 +1,47 @@
+{% block header %}
+ 
+  {% set navigation=[      
+    {
+      link: "guided_shoping.html",
+      titl: 'Guided Shoping',
+      text: 'Guided Shoping'
+    },
+    {
+      link: "style_session.html",
+      titl: 'Style Session',
+      text: 'Style Session'
+    },
+    {
+      link: "wardrobe_edit.html",
+      titl: 'Wardrobe Edit',
+      text: 'Wardrobe Edit'
+    },
+    {
+      link: "special_styling.html",
+      titl: 'Special Styling',
+      text: 'Special Styling'
+    } 
+  ] %}
+{% if title == 'Home' %} 
+  <nav class="close_nav">   
+    {% else %}
+    <nav> 
+{% endif %}       
+    {% for a in navigation %} 
+      {% if title == a.titl %} 
+        <a href={{ a.link }} title={{ a.titl }} class="active burger_nav_link" >
+          <span class="text_accent"> 
+            {{ a.text }} 
+          </span>
+        </a>
+      {% else %}
+        <a href={{ a.link }} title={{ a.titl }} class="burger_nav_link">
+          <span class="text_accent"> 
+            {{ a.text }} 
+          </span>
+        </a>
+      {% endif %}
+    {% endfor %} 
+    </nav>
+
+{% endblock %}

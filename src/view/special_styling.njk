@@ -1,0 +1,85 @@
+{% set title = 'Special Styling' %}
+{% set pageName = 'spec_styl' %}
+{% include "_head.njk" %} 
+{%- import "_macros_image.njk" as makePicture -%}
+
+    <div class="wrapper_{{pageName}}">
+      <header class="container"> 
+        {% include "_nav.njk" %}
+        <div class="burger_nav">
+          <div class="nav_control">         
+            <a href="./index.html" class="nav_btn btn_close">
+              <span class="burger_nav_line">-</span>
+              <span class="burger_nav_line">-</span>
+            </a>             
+          </div> 
+        </div>
+      </header>
+      <main class="main_{{pageName}} mod_main">
+        <section class="{{pageName}} container">
+          <div class="{{pageName}}_content mod_content">
+            <div class="{{pageName}}_img mod_img mod_video">
+              {% set video1 ={ 
+                nameV: 'video_spec_styl',
+                nameP: 'special_styling',
+                folder: './../assets/images/special_styling/'
+                }
+              %}
+
+              {%- import "_macros_video.njk" as makeVideo -%}
+                {{ makeVideo.pack(video1) }}
+
+            {% include "./svg_inline/play_btn.svg" %}
+            </div>
+            <div class="{{pageName}}_message mod_mes">
+              <div class="{{pageName}}_about mod_about">
+                <div class="{{pageName}}_text mod_text">
+                  <p class="timing text_accent">4h &#124; in person</p>
+                  <h4><strong>When time is short but the occasion is special</strong></h4>
+                  <div class="mod_description">
+                    <p>Should you face a particular style quest with no energy to deal with it singly – I&#8217;m there to support you. Whether you need:</p>
+                    <ul>
+                      <li class="mod_li">a special occasion or a red carpet look</li>
+                      <li class="mod_li">a key speaker image for a business event</li>
+                      <li class="mod_li">a preplanned vacation capsule</li>
+                      <li class="mod_li">a desired luxury item sourced and delivered for a dear one or yourself</li>
+                      <li class="mod_li">personal brand or family photoshoot styling</li>
+                    </ul>
+                    <p>With a custom solution to each request, I make sure you feel relaxed and taken care of at all times.</p>
+                    <p>Tap for details and booking.</p>
+                  </div>
+                </div>
+              </div>
+              <a href="./index.html/#link_to_book" title="link to BOOK section" class="book_now"><span>BOOK NOW</span></a> 
+              
+              <details class="det_details text_accent">
+                <summary>details</summary>
+                <div class="mod_serv">
+                  <div>
+                    <p>NOT INFORMATION IN MAKET</p>
+                    <p>NOT INFORMATION IN MAKET</p>
+                    <p>NOT INFORMATION IN MAKET</p>
+                    <p>NOT INFORMATION IN MAKET</p>
+                  </div>
+                  <ul class="mod_ul">
+                    <li class="mod_li">NOT INFORMATION IN MAKET</li>
+                    <li class="mod_li">NOT INFORMATION IN MAKET</li>
+                    <li class="mod_li">NOT INFORMATION IN MAKET</li>
+                    <li class="mod_li">NOT INFORMATION IN MAKET</li>
+                    <li class="mod_li">NOT INFORMATION IN MAKET</li>
+                  </ul>
+                  <p>NOT INFORMATION IN MAKET</p>
+                </div>
+              </details> 
+              <details class="det_testimonials text_accent">
+                <summary class="testimonials">testimonials</summary>
+                {% include "_testimonials.njk" %}
+              </details>
+              <p class="timing text_accent">5h &#124; in person</p>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+  <body>
+</html>

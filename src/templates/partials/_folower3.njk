@@ -1,0 +1,21 @@
+{% block _folower3 %}
+<div class="folower swiper-slide">
+  <div class="folower_person">
+    <div class="folower_foto">
+      {% set img1 ={ 
+      name: 'folower_Da_Tr',
+      folder: './../assets/images/home/'
+      }
+      %}
+      {{ makePicture.pack(img1) }}
+    </div>
+    <div class="folower_who">
+      <h4 class="folower_name"><strong>Дарья Трофимова</strong></h3>
+      <h5 class="folower_jobs">Психотерапевт</h5>
+    </div>
+  </div>
+  <p class="folower_text color_beige_dark">Хочу відзначити в тобі здатність показати та пояснити, що одяг — не просто функціональна тканина...</p>
+</div>
+{% endblock %}
+
+

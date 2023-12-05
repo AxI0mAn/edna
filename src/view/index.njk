@@ -1,0 +1,360 @@
+{% set title = 'Home' %}
+{% include "_head.njk" %} 
+{%- import "_macros_image.njk" as makePicture -%}
+
+    <div id="return_point" class="wrapper">
+      <header class="header container"> 
+        {% include "./svg_inline/logotype.svg" %} 
+        {% include "_nav.njk" %}
+        <div class="burger_nav">
+          <div class="nav_control">         
+            <div id="nav_btn_home" class="nav_btn btn_open">
+              <span class="burger_nav_line">-</span>
+              <span class="burger_nav_line">-</span>
+            </div>             
+          </div> 
+        </div>
+      </header>      
+      <main class="main_home">
+        <section class="hero container">
+          <div class="hero_content">
+            <div class="hero_img"> 
+                {% set img1 ={ 
+                  name: 'hero',
+                  folder: './../assets/images/home/'
+                  }
+                %}
+                {{ makePicture.pack(img1) }}
+            </div>
+            <div class="hero_message">
+              <h1>I help high value woman manifest themselves through style.</h1>
+              <a href="#link_to_book" title="link to BOOK section" class="book_now"><span>BOOK NOW</span></a> 
+            </div>
+          </div>
+        </section>
+
+        <section class="about">  {# it's not container!! because it is adjacent to the left edge #}
+          <div class="about_content">
+            <div class="about_message start_hidden">    
+              <h3>about</h3>         
+              <div class="about_text">
+                <p>Welcome,</p>
+                <p>I&#8217;m Edna Shindinde, personal style advisor &#38; wardrobe editor.</p>
+                <p>I help women embrace their value by teaching how to build a staple wardrobe in line with their inner power and beauty.</p>
+                <p>The greatest flair of mine is to see talent and strength behind every woman I meet. Whether you build a career, take care of a family, own a business or enjoy life by your rules – you are a high-value woman. You set a precedent &#38; should own it proudly!</p>
+                <p>My vision is for each women to unblushingly celebrate her beauty, to be seen and respected without doubting own looks. Styling is just one way to achieve that. And I couldn&#8217;t ask for a better mission, as to guide you on this journey.</p>
+              </div>
+              <div class="about_links start_hidden">
+                <a href="#link_to_services" title="link to Services section"><span class="text_accent">Services</span></a>
+                <a href="#link_to_testimonials" title="link to TESTIMONIALS section"><span class="text_accent">TESTIMONIALS</span></a>
+                <a href="#link_to_book" title="link to BOOK section"><span class="text_accent">BOOK</span></a>
+              </div>
+            </div>
+            <div class="about_img start_hidden">
+              {% set img1 ={ 
+                  name: 'about',
+                  folder: './../assets/images/home/'
+                  }
+                %}
+                {{ makePicture.pack(img1) }}
+            </div>
+          </div>
+        </section>
+
+        <section class="enough container enough_swiper start_hidden">  
+            <div class="enough_content swiper-wrapper">   
+              <div class="swiper-slide"> 
+                <div class="enough_img enough_activ">
+                  {% set img1 ={ 
+                    name: 'magazin',
+                    folder: './../assets/images/home/'
+                    }
+                  %}
+                  {{ makePicture.pack(img1) }}
+                  <div class="enough_message text_show">    
+                    <h2 class="color_beige_light">You are always enough.</h2>
+                    <p class="color_beige_light">Every part of a woman, her every role is equally important and worthy to be seen. Not clothes but you are the starting point of a style to remember. Let&#8217;s manifest that.</p>
+                  </div>
+                </div> 
+              </div>     
+              <div class="swiper-slide"> 
+                <div class="enough_img"> 
+                  {% set img1 ={ 
+                    name: 'bracelets',
+                    folder: './../assets/images/home/'
+                    }
+                  %}
+                  {{ makePicture.pack(img1) }}
+                  <div class="enough_message">    
+                    <h2 class="color_beige_light">You are always enough.</h2>
+                    <p class="color_beige_light">Every part of a woman, her every role is equally important and worthy to be seen. Not clothes but you are the starting point of a style to remember. Let&#8217;s manifest that.</p>
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-slide"> 
+                <div class="enough_img enough_activ">
+                  {% set img1 ={ 
+                    name: 'magazin',
+                    folder: './../assets/images/home/'
+                    }
+                  %}
+                  {{ makePicture.pack(img1) }}
+                  <div class="enough_message">    
+                    <h2 class="color_beige_light">You are always enough.</h2>
+                    <p class="color_beige_light">Every part of a woman, her every role is equally important and worthy to be seen. Not clothes but you are the starting point of a style to remember. Let&#8217;s manifest that.</p>
+                  </div>
+                </div> 
+              </div>     
+              <div class="swiper-slide"> 
+                <div class="enough_img"> 
+                  {% set img1 ={ 
+                    name: 'bracelets',
+                    folder: './../assets/images/home/'
+                    }
+                  %}
+                  {{ makePicture.pack(img1) }}
+                  <div class="enough_message">    
+                    <h2 class="color_beige_light">You are always enough.</h2>
+                    <p class="color_beige_light">Every part of a woman, her every role is equally important and worthy to be seen. Not clothes but you are the starting point of a style to remember. Let&#8217;s manifest that.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        
+        <section  class="approach container">
+          <div class="approach_content">
+            <div class="approach_message start_hidden">    
+              <h3>MY APPROACH</h3>   
+              <h2>I invest TIme to know the woman in front of me.</h2>              
+            </div>
+            <div class="approach_footer start_hidden">
+              <p class="approach_text">I am excited to hear about your story and life experiences that made you who you are. Your personality is the foundaHon of a unique style &#38; I&#8217;m here to explore it.</p>
+              <div class="arrows">
+                <button class="arrow_left">
+                  {% include "./svg_inline/arrow_left.svg" %}
+                </button>
+                <button class="arrow_right">
+                  {% include "./svg_inline/arrow_right.svg" %}
+                </button>
+              </div>
+            </div>
+            <div class="approach_swiper start_hidden">
+              <div class="approach_img swiper-wrapper">
+                <div class="approach_img1 swiper-slide">
+                  {% set img1 ={ 
+                      name: 'my_approach',
+                      folder: './../assets/images/home/'
+                      }
+                    %}
+                    {{ makePicture.pack(img1) }}
+                </div>
+                <div class="approach_img2 swiper-slide">
+                  {% set img1 ={ 
+                      name: 'form',
+                      folder: './../assets/images/home/'
+                      }
+                    %}
+                    {{ makePicture.pack(img1) }}
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="link_to_services"  class="services container">
+          <div class="services_content">
+            <h3  start_hidden>services</h3>
+            <div class="services_showcase">
+              <a href="./guided_shoping.html" title="go to services page" class="services_link  start_hidden">
+                {% set img1 ={ 
+                  name: 'go_guided_shopping',
+                  folder: './../assets/images/home/'
+                  }
+                %}
+                {{ makePicture.pack(img1) }}
+                <span class="text_accent">Guided Shopping</span>
+              </a>
+              <a href="./style_session.html" title="go to page about style session" class="services_link  start_hidden">
+                {% set img1 ={ 
+                  name: 'go_style_session',
+                  folder: './../assets/images/home/'
+                  }
+                %}
+                {{ makePicture.pack(img1) }}
+                <span class="text_accent">Style Session</span>
+              </a>
+              <a href="./wardrobe_edit.html" title="go to page wardrobe edit" class="services_link  start_hidden">
+                {% set img1 ={ 
+                  name: 'go_wardrobe_edit',
+                  folder: './../assets/images/home/'
+                  }
+                %}
+                {{ makePicture.pack(img1) }}
+                <span class="text_accent">Wardrobe Edit</span>
+              </a>
+              <a href="./special_styling.html" title="page about special styling" class="services_link  start_hidden">
+                {% set img1 ={ 
+                  name: 'go_special_styling',
+                  folder: './../assets/images/home/'
+                  }
+                %}
+                {{ makePicture.pack(img1) }}
+                <span class="text_accent">Special Styling</span>
+              </a>
+            </div>
+          </div>
+        </section>
+
+        <section id="link_to_testimonials" class="testimonials_index container start_hidden">
+          
+            {% include "_testimonials_index.njk" %} 
+          
+        </section>
+
+        <section id="link_to_book" class="request container"> 
+          <div class="request_img start_hidden">   
+            {% set img1 ={ 
+              name: 'form',
+              folder: './../assets/images/home/'
+              }
+              %}
+              {{ makePicture.pack(img1) }}
+          </div>
+          
+          <form class="form_request start_hidden" id="form" action="#" autocomplete="off">
+            <div class="form_text">
+              <p>To request a discovery call, book a session or get more details, please contact via form bellow</p>
+            </div>
+            <div class="fields">
+              <div class="form_field">
+                <label class="input_label" for="text">Name</label>
+                <input class="input_field" id="text" type="text" name="text" minlength="2" required autocomplete="off">
+              </div>
+              <div class="form_field">
+                <label class="input_label" for="tel">Phone</label>
+                <input class="input_field" id="tel" type="tel" name="tel" inputmode="text" required autocomplete="off">
+                
+              </div>
+              <div class="form_field">
+                <label class="input_label" for="email">E-mail</label>
+                <input class="input_field" id="email" type="email" name="email" required autocomplete="off">
+                
+              </div>
+
+              <div class="select_field">
+                <div class="select_contact">
+                  <label for="choice" class="select_value">You prefer we contact you via</label>
+                  <select name="choice" class="select_choices">
+                    <option value="phone" class="select_choice" selected ></option>
+                    <option value="phone" class="select_choice"><a href="tel:+380123456789">phone</a></option>
+                    <option value="e-mail" class="select_choice"><a href="mailto:exampl@univers.com" target="_blank">e-mail</a>
+                    </option>
+                    <option value="viber" class="select_choice"><a href="#" target="_blank">viber</a></option>
+                    <option value="telegram" class="select_choice"><a href="#" target="_blank">telegram</a></option>
+                    <option value="whatsApp" class="select_choice"><a href="#" target="_blank">whatsApp</a></option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="select_field">
+                <div class="select_service">
+                  <label for="sel-serv" class="input_label">Services</label>
+                  <select name="sel-serv" class="select_vars">
+                    <option value="phone" class="select_var" selected ></option>
+                    <option value="guid-shop" class="select_var">
+                      <h3>guided shopping</h3>
+                    </option>
+                    <option value="styl-sess" class="select_var">
+                      <h3>style session</h3>
+                    </option>
+                    <option value="ward-edit" class="select_var">
+                      <h3>wardrobe edit</h3>
+                    </option>
+                    <option value="spec-styl" class="select_var">
+                      <h3>special styling</h3>
+                    </option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="form_field">
+                <label class="input_label" for="comment">Comment</label>
+                <input class="input_field" id="comment" type="text" name="text" minlength="2" autocomplete="off">
+                </div>
+            </div>
+            <div class="form_text">
+              <p>For other inquiries or if preferred please contact directly via email edna@shindinde.com</p>
+            </div>
+
+            <div class="form_footer">
+              <div class="social">
+                <a href="#" onclick="event.preventDefault()">
+                  <span>Follow me via</span>
+                  {% include "./svg_inline/logo_instagram.svg" %}
+                </a>
+              </div>
+              <div class="sub_btn">
+                <button class="btn" type="submit">
+                  <span>send a request</span>
+                </button>
+              </div>
+            </div>
+          </form>
+        </section>
+
+        <section class="blog">  {# it's not container!! because it is adjacent to the right edge #}
+          <div class="blog_content">
+            <h3>blog</h3>
+            <div class="blog_massege">
+              <div class="blog_showcase start_hidden">
+                <div class="blog_cases">
+                  {% set arr = [ 'blog1', 'blog2', 'blog3', 'blog4', 'blog5', 'blog6'] %}
+                  {% for i in arr %}
+                    {% set img1 ={ 
+                        name: i ,
+                        folder: './../assets/images/home/'
+                        }
+                      %}
+                    {{ makePicture.pack(img1) }}     
+                  {% endfor %}                  
+                </div>
+                <p class="blog_showcase_text color_beige_light">Knitwear blend guide</p>
+              </div>
+              <div class="blog_enough_message start_hidden">    
+                <h2>sustainable &#38; mindful wardrobe</h2>
+                <div class="blog_enough_text">
+                  <p>Join my community &#38; let&#8217;s explore meaningful topics of conscious fashion and styling together.</p>
+                  <button class="enough_btn"><span>explore more</span></button>
+                </div>
+              </div>   
+            </div>         
+          </div>
+        </section>
+
+        <div class="to_top  container">
+          <a href="#return_point" title="return to top of page">
+            {% include "./svg_inline/arrow_UP.svg" %}
+          </a>
+        </div>
+      </main>
+
+      <footer class=" container">
+        <div class="footer_content">
+          <div class="footer_content_left">
+            {% include "./svg_inline/shindinde.svg" %}
+            <span>&#124;</span>
+            <span>&#169; Copyright 2023</span>
+          </div>
+          <div class="footer_content_right">
+            <a href="#" onclick="event.preventDefault()">
+              <h3 class="color_red_dark">fashion styling</h3>
+              {% include "./svg_inline/logo_instagram.svg" %}
+            </a>
+          </div>
+        </div>
+      </footer>
+    </div>
+  <body>
+</html>
