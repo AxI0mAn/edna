@@ -12,4 +12,15 @@ export default function video_play() {
       }
     })
   }
+  if (play_btn) {
+    play_btn.addEventListener('click', () => {
+      if (vid.paused) {
+        vid.play();
+        play_btn.classList.toggle('display_none');
+      } else {
+        vid.pause();
+        play_btn.classList.toggle('display_none');
+      }
+    })
+  }
 }

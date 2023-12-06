@@ -150,8 +150,15 @@
 
   svg:last-child {
     @include сentering-xy();
+  }
 
-
+  svg:last-child:hover {
+    @include сentering-xy();
+    transform: scale(2);
+    -webkit-transform: scale(2);
+    -moz-transform: scale(2);
+    -ms-transform: scale(2);
+    -o-transform: scale(2);
   }
 
   .display_none {
@@ -179,5 +186,16 @@
         }
       }
     }
+  }
+}
+
+.mod_video {
+  svg:last-child:hover {
+    @include сentering-xy();
+    transform: scale(1.5);
+    -webkit-transform: scale(1.5);
+    -moz-transform: scale(1.5);
+    -ms-transform: scale(1.5);
+    -o-transform: scale(1.5);
   }
 }
