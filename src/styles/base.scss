@@ -235,6 +235,7 @@ main {
     li.mod_li {
       font-family: 'HelveticaNeue Regular', serif;
       @include font($brown_dark, 12, 9, 12, 8, 400);
+      font-size: 12px;
       line-height: func_rem(18);
     }
   }
@@ -245,6 +246,7 @@ main {
     @include font($beige_dark, 12, 8, 12, 8, 400, uppercase, func_rem(0.24));
   }
 
+  a.book_now,
   button {
     background-color: $red_dark;
     color: $beige_light;
@@ -278,6 +280,7 @@ main {
     }
   }
 
+  a.book_now:hover,
   button:hover,
   button.enough_btn:hover {
     background-color: $beige_dark;
@@ -291,6 +294,7 @@ main {
   }
 
 
+  a.book_now:active,
   button:active,
   button.enough_btn:active {
     background-color: $beige_light;

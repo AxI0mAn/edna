@@ -323,8 +323,6 @@ section.enough.container {
 section.approach.container {
 
   .approach_content {
-    max-height: func_prop_maket(846);
-    height: min-content;
     width: fit-content;
 
     display: grid;
@@ -815,6 +813,7 @@ footer.container {
 
   section.approach.container {
     overflow: hidden;
+    margin-bottom: func_prop_mob(40);
 
     .approach_content {
       height: fit-content; //
@@ -825,25 +824,24 @@ footer.container {
       row-gap: func_prop_maket(80); //
 
       .approach_message {
-        height: 80%; //
-
         h2 {
           align-self: center; //
         }
       }
 
       .approach_footer {
+        flex-flow: column-reverse nowrap;
         align-self: center; //
         min-width: fit-content; //
-        margin-top: -70px;
 
         p.approach_text {
           align-self: center; //
-          width: func_prop_mob(333); //
+          min-width: func_prop_mob(333); //
+          width: 90%;
         }
 
         .arrows {
-          align-self: center; //
+          align-self: flex-end; //
         }
       }
 
@@ -964,16 +962,17 @@ footer.container {
             }
           }
 
-          .blog_showcase_text {
+          p.blog_showcase_text {
             position: absolute;
             top: func_prop_mob(180); //
             @include сentering-x(); //
+            @include font_adapt(12, 9); //
           }
         }
 
         .blog_enough_message {
           width: 100%; //
-          height: func_prop_mob(294); //
+          // height: func_prop_mob(294); //
           padding: func_prop_mob(40) auto; //
 
           h2 {
@@ -983,16 +982,17 @@ footer.container {
           }
 
           .blog_enough_text {
-            flex-flow: row nowrap; //
+            flex-flow: column nowrap; //
             justify-content: space-evenly; //
 
             p {
-              width: func_prop_mob(280); //
+              width: 90%; //func_prop_mob(280); //
             }
 
 
             .enough_btn {
               align-self: center;
+              margin: func_prop_mob(20) auto;
 
             }
           }
