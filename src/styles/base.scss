@@ -33,42 +33,45 @@ body {
 
   h3 {
     font-family: 'HelveticaNeue Regular', serif;
-    @include font($red_dark, 12, 10, 12, 10, 400, uppercase, func_rem(0.54));
-    line-height: normal;
+    @include font($red_dark, 32, 12, 32, 12, 400, uppercase, func_rem(0.54));
+    line-height: normal; // 12 10 12 10
   }
 
   h4 {
     strong {
       font-family: 'HelveticaNeueLTStd-Md', serif;
-      @include font($brown_dark, 12, 10, 12, 10, 500, uppercase);
-      line-height: normal;
+      @include font($brown_dark, 22, 12, 22, 12, 500, uppercase);
+      line-height: normal; // 12 10 12 10
     }
   }
 
   h5 {
     font-family: 'HelveticaNeue Regular', serif;
-    @include font($beige_dark, 7, 5, 7, 5, 400, uppercase, func_rem(0.14));
-    line-height: normal;
+    @include font($beige_dark, 12, 10, 12, 8, 400, uppercase, func_rem(0.14));
+    line-height: normal; // 7 5 7 5 
   }
 
   p,
   li.mod_li {
     font-family: 'HelveticaNeue Regular', serif;
-    @include font($brown_dark, 12, 8, 12, 8, 400);
-    line-height: func_rem(18);
+    @include font($brown_dark, 14, 12, 12, 10, 400);
+    line-height: func_rem(18); // 12 8 12 8
   }
 }
 
 .text_accent {
   font-family: 'HelveticaNeue Regular', serif;
-  @include font($beige_dark, 12, 8, 12, 8, 400, uppercase, func_rem(0.24));
+  @include font($beige_dark, 14, 12, 12, 10, 400, uppercase, func_rem(0.24));
 }
+
+// 12 8 12 8
 
 a,
 a>span {
   font-family: 'HelveticaNeue Regular', serif;
-  @include font($beige_dark, 12, 8, 12, 8, 400, uppercase, func_rem(0.24));
+  @include font($beige_dark, 14, 12, 12, 10, 400, uppercase, func_rem(0.24));
 
+  // 12 8 12 8
   &:visited {
     color: $brown_light;
   }
@@ -107,7 +110,7 @@ button {
   span {
     width: func_prop_maket(195);
     color: $beige_light;
-    font-size: func_respons(10, 7);
+    font-size: func_respons(14, 12); //10 7
     @include сentering-xy();
     font-family: 'HelveticaNeue Regular', serif;
     letter-spacing: 0.5px;

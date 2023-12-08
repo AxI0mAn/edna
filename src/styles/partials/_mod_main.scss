@@ -90,7 +90,7 @@
             max-height: max-content;
             margin: func_prop_maket(32) 0px;
 
-            div {
+            .mod_serv_items {
               width: func_prop_maket(410);
               min-height: func_prop_maket(96);
               max-height: fit-content;
@@ -183,6 +183,13 @@
         .mod_mes {
           max-width: 90%; //
 
+          details.det_details {
+            .mod_serv {
+              .mod_serv_items {
+                width: 90%;
+              }
+            }
+          }
         }
       }
     }
